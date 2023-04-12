@@ -14,9 +14,10 @@ public class PlayerMoviment : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundcheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float groundCheckRadius=0.2f;
 
 
-    
+
 
     // Update is called once per frame
     void Update()
@@ -43,7 +44,7 @@ public class PlayerMoviment : MonoBehaviour
     }
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundcheck.position,0.2f ,groundLayer);
+        return Physics2D.OverlapCircle(groundcheck.position, groundCheckRadius, groundLayer);
     }
 
     private void Flip()
@@ -55,5 +56,11 @@ public class PlayerMoviment : MonoBehaviour
             localscale.x *= -1f;
             transform.localScale = localscale;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(groundcheck.position, groundCheckRadius);
     }
 }
