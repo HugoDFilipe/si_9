@@ -7,23 +7,24 @@ public class PlayerMoviment : MonoBehaviour
 
     private float horizontal;
     private float speed = 4f;
-    private float jumpingpower = 10f;
     private bool isfacingright = true;
 
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundcheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float groundCheckRadius=0.2f, coyoteTimer = 0.1f, jumpingpower = 10f;
+    private bool isGrounded=false;
 
 
-    
+
 
     // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if(Input.GetButtonDown("Jump") && IsGrounded())
+        if(Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingpower);
         }
@@ -34,16 +35,28 @@ public class PlayerMoviment : MonoBehaviour
         }
 
         Flip();
-
+        CheckGrounded();
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
-    private bool IsGrounded()
+    private void CheckGrounded()
     {
-        return Physics2D.OverlapCircle(groundcheck.position,0.2f ,groundLayer);
+        if(Physics2D.OverlapCircle(groundcheck.position, groundCheckRadius, groundLayer))
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            Invoke("NotGrounded", coyoteTimer);
+        }
+    }
+
+    private void NotGrounded()
+    {
+        isGrounded = false;
     }
 
     private void Flip()
@@ -55,5 +68,11 @@ public class PlayerMoviment : MonoBehaviour
             localscale.x *= -1f;
             transform.localScale = localscale;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(groundcheck.position, groundCheckRadius);
     }
 }
