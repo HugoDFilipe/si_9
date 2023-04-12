@@ -7,14 +7,13 @@ public class PlayerMoviment : MonoBehaviour
 
     private float horizontal;
     private float speed = 4f;
-    private float jumpingpower = 10f;
     private bool isfacingright = true;
 
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundcheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private float groundCheckRadius=0.2f, coyoteTimer = 0.1f;
+    [SerializeField] private float groundCheckRadius=0.2f, coyoteTimer = 0.1f, jumpingpower = 10f;
     private bool isGrounded=false;
 
 
