@@ -7,11 +7,18 @@ public class platSwitch : MonoBehaviour
     [SerializeField]
     private PlatformMovement[] platforms;
     [SerializeField]
-    private bool onSwitch=true;
+    private bool onSwitch = true, requireKey = false;
     [SerializeField]
     private GameObject text;
+    [SerializeField]
+    private int keyNumber;
 
-    private bool canMove = false;
+    private bool canMove = false, haskey = false;
+
+    private void Start()
+    {
+        keyManager.KeyGet += checkKey;
+    }
 
     private void Update()
     {
@@ -27,12 +34,32 @@ public class platSwitch : MonoBehaviour
         }
     }
 
+    private void checkKey(int eventKeyNumber)
+    {
+        Debug.Log(keyNumber);
+        if (keyNumber == eventKeyNumber)
+        {
+            haskey = true;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (requireKey)
         {
-            text.SetActive(true);
-            canMove = true;
+            if (haskey && collision.gameObject.tag == "Player")
+            {
+                text.SetActive(true);
+                canMove = true;
+            }
+        }
+        else
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                text.SetActive(true);
+                canMove = true;
+            }
         }
     }
 
