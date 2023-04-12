@@ -29,6 +29,8 @@ public class platSwitch : MonoBehaviour
                 foreach (PlatformMovement platform in platforms)
                 {
                     platform.moving = onSwitch;
+                    platform.GetComponent<AudioSource>().Play();
+                    gameObject.GetComponent<AudioSource>().Play();
                 }
             }
         }

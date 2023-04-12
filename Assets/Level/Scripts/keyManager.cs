@@ -9,6 +9,10 @@ public class keyManager : MonoBehaviour
     [SerializeField]
     private int keyNumber = 0;
 
+    [SerializeField]
+    private AudioClip keySound;
+
+
     public delegate void numberSender(int keyNumber);
     public static event numberSender KeyGet;
     // Start is called before the first frame update
@@ -28,6 +32,7 @@ public class keyManager : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             KeyGet(keyNumber);
+            collision.gameObject.GetComponent<AudioSource>().Play();
             gameObject.SetActive(false);
         }
     }

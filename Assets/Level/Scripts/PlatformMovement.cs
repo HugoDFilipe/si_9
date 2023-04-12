@@ -47,7 +47,6 @@ public class PlatformMovement : MonoBehaviour
     private void move()
     {
         transform.position = Vector2.MoveTowards(transform.position, posNumbers[nextpos], speed/speedDivider);
-        Debug.Log(Vector2.MoveTowards(transform.position, posNumbers[nextpos], speed / speedDivider));
 
         if(transform.position == (Vector3)posNumbers[nextpos])
         {
