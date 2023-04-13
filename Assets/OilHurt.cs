@@ -15,6 +15,6 @@ public class OilHurt : MonoBehaviour
 
     private void restartScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Application.LoadLevel(Application.loadedLevel);
     }
 }
