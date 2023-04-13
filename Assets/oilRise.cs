@@ -7,7 +7,9 @@ public class oilRise : MonoBehaviour
     [SerializeField]
     private float oilSpeed = 1f;
     public int keyNumber;
+    public float keyGetMultiplier=1.5f;
 
+    [SerializeField]
     private bool rising = false;
     // Start is called before the first frame update
     void Start()
@@ -26,9 +28,10 @@ public class oilRise : MonoBehaviour
 
     void checkKey(int eventKeyNumber)
     {
-        if (keyNumber == eventKeyNumber)
+        if (keyNumber <= eventKeyNumber)
         {
             rising = true;
+            oilSpeed += (eventKeyNumber - 2) * keyGetMultiplier;
         }
     }
 }

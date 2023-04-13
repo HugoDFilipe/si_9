@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OilHurt : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag=="Player")
+        if (collision.transform.tag == "Player")
         {
-
+            restartScene();
         }
+    }
+
+    private void restartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
