@@ -67578,7 +67578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7926758216004879349, guid: 4d339e53fc2f1f14ba05037f3c05b214, type: 3}
       propertyPath: leftPos.x
-      value: -3.06
+      value: -2.29
       objectReference: {fileID: 0}
     - target: {fileID: 7926758216004879349, guid: 4d339e53fc2f1f14ba05037f3c05b214, type: 3}
       propertyPath: leftPos.y
