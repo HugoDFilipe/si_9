@@ -453,19 +453,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 32
+  m_lineSpacing: 64
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -536,25 +536,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
-  - In England in 1760
-  - mankind began to mass-produce various types of machines
-  - for everyday use or to facilitate factory work.
-  - With this mass production, technology began to evolve rapidly,
-  - making human life superfluous and sedentary,
-  - transforming the world as it was known into a fully automated world,
-  - where everything was managed by machines.
-  - In 1870, an activist revolution against technological advancement
-  - caused several explosions throughout Great Britain,
-  - forcing humans to take refuge underground
-  - as a last chance to survive that catastrophe.
-  - However, with humans came technology,
-  - making cities fully automated, where machines no longer obeyed humans,
-  - but rather humans obeyed the machines.
-  - In 1914, a 19-year-old youth,
-  - raised and living in the automated world,
-  - wondered what life was like before machines
-  - and what lay beyond the sky...
-  textDurationOnScreen: 7
+  - In England in 1760, mankind began to mass-produce various types of machines for
+    everyday use or to facilitate factory work. With this mass production, technology
+    began to evolve rapidly, making human life superfluous and sedentary, transforming
+    the world as it was known into a fully automated world, where everything was
+    managed by machines.
+  - In 1870, an activist revolution against technological advancement caused several
+    explosions throughout Great Britain, forcing humans to take refuge underground
+    as a last chance to survive that catastrophe. However, with humans came technology,
+    making cities fully automated, where machines no longer obeyed humans, but rather
+    humans obeyed the machines.
+  - In 1914, a 19-year-old youth, raised and living in the automated world, wondered
+    what life was like before machines and what lay beyond the sky...
+  textDurationOnScreen:
+  - 21
+  - 21
+  - 13
   _loadNextScene: {fileID: 628239801}
 --- !u!1 &1711397892
 GameObject:
@@ -993,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8291954055301098005, guid: 1e7494709af3fb1438e3e2a4678eb8ce, type: 3}
       propertyPath: quitToMenu
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8291954055301098005, guid: 1e7494709af3fb1438e3e2a4678eb8ce, type: 3}
       propertyPath: _loadNextScene

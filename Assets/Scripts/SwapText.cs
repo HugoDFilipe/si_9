@@ -9,7 +9,7 @@ public class SwapText : MonoBehaviour
     string[] texts;
 
     [SerializeField]
-    float textDurationOnScreen = 4f;
+    float[] textDurationOnScreen;
     float currentDurationOnScreen = 1f;
 
     [SerializeField]
@@ -23,14 +23,14 @@ public class SwapText : MonoBehaviour
     private void Start()
     {
         _shownText = GetComponent<TextMeshProUGUI>();
-        _shownText.SetText(texts[currentTextIndex]);
+        _shownText.SetText(texts[currentTextIndex].Replace("\\n", "\n"));
 
         _animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if(currentDurationOnScreen < textDurationOnScreen)
+        if(currentDurationOnScreen < textDurationOnScreen[currentTextIndex])
         {
             currentDurationOnScreen += Time.deltaTime;
             return;
@@ -52,7 +52,7 @@ public class SwapText : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        _shownText.SetText(texts[++currentTextIndex]);
+        _shownText.SetText(texts[++currentTextIndex].Replace("\\n", "\n"));
 
         _animator.SetBool("ShowText", true);
 
