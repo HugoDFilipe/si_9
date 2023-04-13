@@ -13,7 +13,7 @@ public class MusicChanger : MonoBehaviour
 
     private bool hasChanged = false;
 
-    void Start()
+    void awake()
     {
         keyManager.KeyGet += checkKey;
         audioSource = gameObject.GetComponent<AudioSource>();
