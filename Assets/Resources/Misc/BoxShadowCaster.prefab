@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4716438463756114565}
   - component: {fileID: 5635889062357295702}
   - component: {fileID: 9110631542013982851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BoxShadowCaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
