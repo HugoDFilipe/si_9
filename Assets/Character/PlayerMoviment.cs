@@ -14,6 +14,7 @@ public class PlayerMoviment : MonoBehaviour
     [SerializeField] private Transform groundcheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius=0.2f, coyoteTimer = 0.1f, jumpingpower = 10f;
+    [SerializeField] private Animator anim;
     private bool isGrounded=false;
 
 
@@ -36,6 +37,7 @@ public class PlayerMoviment : MonoBehaviour
 
         Flip();
         CheckGrounded();
+        AnimationHandler();
     }
 
     private void FixedUpdate()
@@ -74,5 +76,10 @@ public class PlayerMoviment : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(groundcheck.position, groundCheckRadius);
+    }
+
+    private void AnimationHandler()
+    {
+        anim.SetFloat("hSpeed", Mathf.Abs(horizontal));
     }
 }
