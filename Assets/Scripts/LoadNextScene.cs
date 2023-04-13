@@ -7,7 +7,7 @@ public class LoadNextScene : MonoBehaviour
 {
     Scene currentScene;
 
-    public Animator fadeTransition;
+    public Animator fadeTransition, musicFade;
     public float fadeHalfDuration = 1f;
 
     private void Start()
@@ -39,7 +39,10 @@ public class LoadNextScene : MonoBehaviour
 
     private IEnumerator FadeToScene(int sceneIndex)
     {
-        fadeTransition.SetTrigger("Start");
+        if(fadeTransition != null)
+            fadeTransition.SetTrigger("Start");
+        if (musicFade != null)
+            musicFade.SetTrigger("StopAudio");
 
         yield return new WaitForSeconds(fadeHalfDuration);
 
