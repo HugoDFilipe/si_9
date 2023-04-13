@@ -15,6 +15,9 @@ public class SwapText : MonoBehaviour
     [SerializeField]
     LoadNextScene _loadNextScene;
 
+    [SerializeField]
+    bool quitToMenu = false;
+
     int currentTextIndex = 0;
 
     TextMeshProUGUI _shownText;
@@ -43,7 +46,12 @@ public class SwapText : MonoBehaviour
             StartCoroutine(NextText());
         }
         else
-            _loadNextScene.LoadNextSceneIndex();
+        {
+            if (!quitToMenu)
+                _loadNextScene.LoadNextSceneIndex();
+            else
+                _loadNextScene.LoadSceneIndex(0);
+        }           
     }
 
     IEnumerator NextText()
