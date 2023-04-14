@@ -15,6 +15,7 @@ public class PlayerMoviment : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius=0.2f, coyoteTimer = 0.1f, jumpingpower = 10f;
     [SerializeField] private Animator anim;
+    [SerializeField] private AudioSource walkSound;
     private bool isGrounded=false;
 
 
@@ -23,6 +24,14 @@ public class PlayerMoviment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!walkSound.isPlaying && horizontal != 0)
+        {
+            walkSound.Play();
+        }
+        else if (horizontal == 0)
+        {
+            walkSound.Stop();
+        }
         horizontal = Input.GetAxisRaw("Horizontal");
 
         if(Input.GetButtonDown("Jump") && isGrounded)
