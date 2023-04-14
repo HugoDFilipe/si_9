@@ -13,7 +13,7 @@ public class SkipOrQuit : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
         {
             if (quitToMenu)
                 _loadNextScene.LoadSceneIndex(0);
