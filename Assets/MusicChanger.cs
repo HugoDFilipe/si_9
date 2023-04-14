@@ -9,16 +9,18 @@ public class MusicChanger : MonoBehaviour
     [SerializeField]
     private AudioClip actionSound, calmSound;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     private bool hasChanged = false;
 
     void Awake()
     {
         keyManager.KeyGet += checkKey;
-        audioSource = gameObject.GetComponent<AudioSource>();
-        audioSource.clip = calmSound;
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.clip = calmSound;
+            audioSource.Play();
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class MusicChanger : MonoBehaviour
 
     void checkKey(int eventKeyNumber)
     {
-        if (keyNumber <= eventKeyNumber && !hasChanged)
+        if (keyNumber <= eventKeyNumber && !hasChanged && audioSource!=null)
         {
             audioSource.clip=actionSound;
             audioSource.Play();
