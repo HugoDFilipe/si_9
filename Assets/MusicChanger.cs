@@ -7,7 +7,7 @@ public class MusicChanger : MonoBehaviour
     [SerializeField]
     private int keyNumber;
     [SerializeField]
-    private AudioClip actionSound;
+    private AudioClip actionSound, calmSound;
 
     private AudioSource audioSource;
 
@@ -17,6 +17,8 @@ public class MusicChanger : MonoBehaviour
     {
         keyManager.KeyGet += checkKey;
         audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = calmSound;
+        audioSource.Play();
     }
 
     // Update is called once per frame
