@@ -11,7 +11,6 @@ public class PlayerMoviment : MonoBehaviour
 
 
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private AudioSource walkAudio;
     [SerializeField] private Transform groundcheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius=0.2f, coyoteTimer = 0.1f, jumpingpower = 10f;
@@ -25,14 +24,6 @@ public class PlayerMoviment : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-
-        if(!walkAudio.isPlaying && horizontal != 0)
-        {
-            walkAudio.Play();
-        }else if (horizontal == 0)
-        {
-            walkAudio.Stop();
-        }
 
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
