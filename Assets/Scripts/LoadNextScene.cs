@@ -39,15 +39,18 @@ public class LoadNextScene : MonoBehaviour
 
     private IEnumerator FadeToScene(int sceneIndex)
     {
-        if(fadeTransition != null)
+        if (fadeTransition != null)
             fadeTransition.SetTrigger("Start");
         if (musicFade != null)
             musicFade.SetTrigger("StopAudio");
 
         yield return new WaitForSeconds(fadeHalfDuration);
 
-        SceneManager.LoadScene(sceneIndex);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneIndex);
 
-        yield return null;
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }
