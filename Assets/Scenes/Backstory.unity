@@ -344,7 +344,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pres ESCAPE to skip
+  m_text: Press ESCAPE to skip
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 618c4273ac79b8b4da35f9efd5308c1f, type: 2}
   m_sharedMaterial: {fileID: -6042848261992481794, guid: 618c4273ac79b8b4da35f9efd5308c1f, type: 2}
@@ -723,6 +723,7 @@ MonoBehaviour:
   - 15
   - 10
   _loadNextScene: {fileID: 628239801}
+  quitToMenu: 0
 --- !u!1 &1711397892
 GameObject:
   m_ObjectHideFlags: 0
