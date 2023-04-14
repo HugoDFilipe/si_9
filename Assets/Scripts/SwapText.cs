@@ -22,6 +22,7 @@ public class SwapText : MonoBehaviour
 
     TextMeshProUGUI _shownText;
     Animator _animator;
+    public bool isSceneLoader;
 
     private void Start()
     {
@@ -45,7 +46,7 @@ public class SwapText : MonoBehaviour
         {
             StartCoroutine(NextText());
         }
-        else
+        else if(isSceneLoader)
         {
             if (!quitToMenu)
                 _loadNextScene.LoadNextSceneIndex();

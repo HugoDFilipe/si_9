@@ -416,16 +416,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
-  - o mundo esta todo destruido e a unica humanidade viva e a que esta na cidade
-    mecanizada
-  - 
-  - logo
-  - 
-  - <size=70%>Game Director<line-height=120%>\n<size=100%><line-height=100%>Hugo
-    Filipe
-  - 
-  - <size=70%>Game Director<line-height=120%>\n<size=100%><line-height=100%>Hugo
-    Filipe
+  - Of the outside world naught remains but rubble and cogs, the only breathing humans
+    left in this world are those in the groaning city of gears you came from, the
+    future is grim, and you may be the last generation.
+  - In the end humanity was nothing but a blink in the vast machinations of the universe.
+  - No one will remember you. <br> The World  Has Ended
   textDurationOnScreen:
   - 6
   - 5
@@ -433,7 +428,8 @@ MonoBehaviour:
   - 1
   - 5
   _loadNextScene: {fileID: 628239801}
-  quitToMenu: 1
+  quitToMenu: 0
+  isSceneLoader: 1
 --- !u!222 &166758511
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -925,6 +921,7 @@ MonoBehaviour:
   - 7
   _loadNextScene: {fileID: 628239801}
   quitToMenu: 1
+  isSceneLoader: 0
 --- !u!1 &1442312824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1166,7 @@ RectTransform:
   m_GameObject: {fileID: 1808470057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 850559445}
@@ -1744,6 +1741,7 @@ MonoBehaviour:
   - 7
   _loadNextScene: {fileID: 628239801}
   quitToMenu: 1
+  isSceneLoader: 0
 --- !u!222 &2128838897
 CanvasRenderer:
   m_ObjectHideFlags: 0
