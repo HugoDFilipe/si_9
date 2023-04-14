@@ -8,7 +8,7 @@ public class platformPlayerCatch : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.transform.parent.SetParent(transform);
+            collision.transform.SetParent(transform);
         }
     }
 
@@ -16,7 +16,7 @@ public class platformPlayerCatch : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.transform.parent.SetParent(null);
+            collision.transform.SetParent(null);
         }
     }
 }
