@@ -32,6 +32,15 @@ public class PlayerMoviment : MonoBehaviour
         {
             walkSound.Stop();
         }
+
+        if (!isGrounded)
+        {
+            walkSound.volume = 0.5f;
+        }
+        else
+        {
+            walkSound.volume = 1f;
+        }
         horizontal = Input.GetAxisRaw("Horizontal");
 
         if(Input.GetButtonDown("Jump") && isGrounded)
