@@ -48,6 +48,7 @@ public class PlatformMovement : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, posNumbers[nextpos], speed/speedDivider);
 
+
         if(transform.position == (Vector3)posNumbers[nextpos])
         {
             if(curpos==0 && nextpos == 1)
