@@ -9,6 +9,9 @@ public class LoadCredits : MonoBehaviour
     int creditsSceneIndex = 3;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene(creditsSceneIndex);
+        if (collision.tag == "Player")
+        {
+            SceneManager.LoadScene(creditsSceneIndex);
+        }
     }
 }
