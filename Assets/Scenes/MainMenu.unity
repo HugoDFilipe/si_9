@@ -1775,6 +1775,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7332311116326096897, guid: bcc5ec730be0521419005c36bf0cc4f1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332311116326096897, guid: bcc5ec730be0521419005c36bf0cc4f1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7332311116950369794, guid: bcc5ec730be0521419005c36bf0cc4f1, type: 3}
       propertyPath: musicFade
       value: 
