@@ -17,7 +17,7 @@ public class PlayerMoviment : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private AudioSource walkSound;
     private bool isGrounded=false;
-    private bool prevGroundedState=false;
+
 
 
 
@@ -53,7 +53,6 @@ public class PlayerMoviment : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y >0f)
         {            
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            anim.SetTrigger("Jump");
         }
 
         Flip();
@@ -64,11 +63,6 @@ public class PlayerMoviment : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-
-        if (!isGrounded)
-        {
-            anim.SetTrigger("Fall");
-        }
     }
     private void CheckGrounded()
     {
@@ -81,12 +75,7 @@ public class PlayerMoviment : MonoBehaviour
             Invoke("NotGrounded", coyoteTimer);
         }
 
-        if(prevGroundedState==false && isGrounded == true)
-        {
-            anim.SetTrigger("Land");
-        }
-
-        prevGroundedState = isGrounded;
+        anim.SetBool("isFalling", !isGrounded);
     }
 
     private void NotGrounded()
