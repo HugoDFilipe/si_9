@@ -14,6 +14,8 @@ public class platSwitch : MonoBehaviour
     private int keyNumber;
 
     private bool canMove = false, haskey = false;
+    public delegate void insertNumberSender(int getKeyNumber);
+    public static event insertNumberSender insertKeyGet;
 
     private void Start()
     {
@@ -69,6 +71,7 @@ public class platSwitch : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            insertKeyGet(keyNumber);
             text.SetActive(false);
             canMove = false;
         }
