@@ -34,4 +34,9 @@ public class oilRise : MonoBehaviour
             oilSpeed += (eventKeyNumber - 2) * keyGetMultiplier;
         }
     }
+
+    public void stop()
+    {
+        oilSpeed = 0;
+    }
 }

@@ -9,7 +9,15 @@ public class OilHurt : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            restartScene();
+            collision.GetComponent<Animator>().SetTrigger("Die");
+            collision.GetComponent<PlayerMoviment>().enabled=false;
+            collision.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+            if (collision.GetComponent<oilRise>() != null)
+            {
+                collision.GetComponent<oilRise>().stop();
+            }
+
+            Invoke("restartScene", 1f);
         }
     }
 
