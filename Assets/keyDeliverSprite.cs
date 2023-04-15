@@ -5,25 +5,21 @@ using UnityEngine;
 
 public class keyDeliverSprite : MonoBehaviour
 {
-    public int keyNumber;
-    public Sprite deliveredKey;
+    public Sprite deliveredKey, defaultHole;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        platSwitch.insertKeyGet += checkKey;
-    }
-
-    private void checkKey(int thisKeyNumber)
-    {
-        if (keyNumber == thisKeyNumber)
-        {
-            gameObject.GetComponent<SpriteRenderer>().sprite = deliveredKey;
-        }
+        gameObject.GetComponent<SpriteRenderer>().sprite = defaultHole;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void keyChange()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = deliveredKey;
     }
 }
