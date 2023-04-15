@@ -292,6 +292,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2980592197579955891, guid: 0708fb818da07af4db796e9531e791d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980592198143607107, guid: 0708fb818da07af4db796e9531e791d9, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980592198143607107, guid: 0708fb818da07af4db796e9531e791d9, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980592198143607107, guid: 0708fb818da07af4db796e9531e791d9, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980592198143607107, guid: 0708fb818da07af4db796e9531e791d9, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980592198143607107, guid: 0708fb818da07af4db796e9531e791d9, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980592198143607107, guid: 0708fb818da07af4db796e9531e791d9, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3359826519573074399, guid: 0708fb818da07af4db796e9531e791d9, type: 3}
       propertyPath: m_Name
       value: PauseMenu
